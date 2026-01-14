@@ -9,6 +9,7 @@
       background: #0f0f14;
       color: #eee;
       margin: 0;
+      font-size: 18px;
     }
 
     /* ===== Tabs ===== */
@@ -44,9 +45,26 @@
     }
 
     /* ===== Lists ===== */
+    .skylander-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(220px, 1fr));
+      gap: 6px 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
     .skylander-list label {
-      display: block;
-      margin: 4px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    /* Cleaner checkboxes */
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #00ffaa;
       cursor: pointer;
     }
 
@@ -92,60 +110,60 @@
 
   <!-- ===== Spyro's Adventure ===== -->
   <div id="ssa" class="content active">
-    <h2>Spyro's Adventure</h2>
+    <h2 style="text-align:center; font-size: 32px;">Spyro's Adventure</h2>
 
-    <h3>Skylanders</h3>
+    <h3 style="text-align:center;">Skylanders</h3>
     <div class="skylander-list">
       <!-- Magic -->
-      <label><input type="checkbox" data-name="Spyro" /> Spyro</label>
-      <label><input type="checkbox" data-name="Double Trouble" /> Double Trouble</label>
-      <label><input type="checkbox" data-name="Voodood" /> Voodood</label>
-      <label><input type="checkbox" data-name="Wrecking Ball" /> Wrecking Ball</label>
+      <label style="color:#9b59b6;"><input type="checkbox" data-name="Spyro" /> Spyro</label>
+      <label style="color:#9b59b6;"><input type="checkbox" data-name="Double Trouble" /> Double Trouble</label>
+      <label style="color:#9b59b6;"><input type="checkbox" data-name="Voodood" /> Voodood</label>
+      <label style="color:#9b59b6;"><input type="checkbox" data-name="Wrecking Ball" /> Wrecking Ball</label>
 
       <!-- Water -->
-      <label><input type="checkbox" data-name="Gill Grunt" /> Gill Grunt</label>
-      <label><input type="checkbox" data-name="Slam Bam" /> Slam Bam</label>
-      <label><input type="checkbox" data-name="Wham Shell" /> Wham Shell</label>
-      <label><input type="checkbox" data-name="Zap" /> Zap</label>
+      <label style="color:#4169e1;"><input type="checkbox" data-name="Gill Grunt" /> Gill Grunt</label>
+      <label style="color:#4169e1;"><input type="checkbox" data-name="Slam Bam" /> Slam Bam</label>
+      <label style="color:#4169e1;"><input type="checkbox" data-name="Wham Shell" /> Wham Shell</label>
+      <label style="color:#4169e1;"><input type="checkbox" data-name="Zap" /> Zap</label>
 
       <!-- Tech -->
-      <label><input type="checkbox" data-name="Trigger Happy" /> Trigger Happy</label>
-      <label><input type="checkbox" data-name="Boomer" /> Boomer</label>
-      <label><input type="checkbox" data-name="Drill Sergeant" /> Drill Sergeant</label>
-      <label><input type="checkbox" data-name="Drobot" /> Drobot</label>
+      <label style="color:#e67e22;"><input type="checkbox" data-name="Trigger Happy" /> Trigger Happy</label>
+      <label style="color:#e67e22;"><input type="checkbox" data-name="Boomer" /> Boomer</label>
+      <label style="color:#e67e22;"><input type="checkbox" data-name="Drill Sergeant" /> Drill Sergeant</label>
+      <label style="color:#e67e22;"><input type="checkbox" data-name="Drobot" /> Drobot</label>
 
       <!-- Undead -->
-      <label><input type="checkbox" data-name="Cynder" /> Cynder</label>
-      <label><input type="checkbox" data-name="Chop Chop" /> Chop Chop</label>
-      <label><input type="checkbox" data-name="Ghost Roaster" /> Ghost Roaster</label>
-      <label><input type="checkbox" data-name="Hex" /> Hex</label>
+      <label style="color:#aaaaaa;"><input type="checkbox" data-name="Cynder" /> Cynder</label>
+      <label style="color:#aaaaaa;"><input type="checkbox" data-name="Chop Chop" /> Chop Chop</label>
+      <label style="color:#aaaaaa;"><input type="checkbox" data-name="Ghost Roaster" /> Ghost Roaster</label>
+      <label style="color:#aaaaaa;"><input type="checkbox" data-name="Hex" /> Hex</label>
 
       <!-- Earth -->
-      <label><input type="checkbox" data-name="Bash" /> Bash</label>
-      <label><input type="checkbox" data-name="Prism Break" /> Prism Break</label>
-      <label><input type="checkbox" data-name="Dino Rang" /> Dino Rang</label>
-      <label><input type="checkbox" data-name="Terrafin" /> Terrafin</label>
+      <label style="color:#8b5a2b;"><input type="checkbox" data-name="Bash" /> Bash</label>
+      <label style="color:#8b5a2b;"><input type="checkbox" data-name="Prism Break" /> Prism Break</label>
+      <label style="color:#8b5a2b;"><input type="checkbox" data-name="Dino Rang" /> Dino Rang</label>
+      <label style="color:#8b5a2b;"><input type="checkbox" data-name="Terrafin" /> Terrafin</label>
 
       <!-- Fire -->
-      <label><input type="checkbox" data-name="Ignitor" /> Ignitor</label>
-      <label><input type="checkbox" data-name="Flameslinger" /> Flameslinger</label>
-      <label><input type="checkbox" data-name="Sunburn" /> Sunburn</label>
-      <label><input type="checkbox" data-name="Eruptor" /> Eruptor</label>
+      <label style="color:#e74c3c;"><input type="checkbox" data-name="Ignitor" /> Ignitor</label>
+      <label style="color:#e74c3c;"><input type="checkbox" data-name="Flameslinger" /> Flameslinger</label>
+      <label style="color:#e74c3c;"><input type="checkbox" data-name="Sunburn" /> Sunburn</label>
+      <label style="color:#e74c3c;"><input type="checkbox" data-name="Eruptor" /> Eruptor</label>
 
       <!-- Life -->
-      <label><input type="checkbox" data-name="Stealth Elf" /> Stealth Elf</label>
-      <label><input type="checkbox" data-name="Stump Smash" /> Stump Smash</label>
-      <label><input type="checkbox" data-name="Camo" /> Camo</label>
-      <label><input type="checkbox" data-name="Zook" /> Zook</label>
+      <label style="color:#2ecc71;"><input type="checkbox" data-name="Stealth Elf" /> Stealth Elf</label>
+      <label style="color:#2ecc71;"><input type="checkbox" data-name="Stump Smash" /> Stump Smash</label>
+      <label style="color:#2ecc71;"><input type="checkbox" data-name="Camo" /> Camo</label>
+      <label style="color:#2ecc71;"><input type="checkbox" data-name="Zook" /> Zook</label>
 
       <!-- Air -->
-      <label><input type="checkbox" data-name="Sonic Boom" /> Sonic Boom</label>
-      <label><input type="checkbox" data-name="Lightning Rod" /> Lightning Rod</label>
-      <label><input type="checkbox" data-name="Whirlwind" /> Whirlwind</label>
-      <label><input type="checkbox" data-name="Warnado" /> Warnado</label>
+      <label style="color:#7fd3ff;"><input type="checkbox" data-name="Sonic Boom" /> Sonic Boom</label>
+      <label style="color:#7fd3ff;"><input type="checkbox" data-name="Lightning Rod" /> Lightning Rod</label>
+      <label style="color:#7fd3ff;"><input type="checkbox" data-name="Whirlwind" /> Whirlwind</label>
+      <label style="color:#7fd3ff;"><input type="checkbox" data-name="Warnado" /> Warnado</label>
     </div>
 
-    <h3>Sets</h3>
+    <h3 style="text-align:center;">Sets</h3>
 
     <div class="set" data-set="Spyro,Double Trouble,Voodood,Wrecking Ball">
       <div class="set-title">SSA Magic <span class="trophy">🏆</span></div>
