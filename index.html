@@ -45,12 +45,25 @@
     }
 
     /* ===== Lists ===== */
-    .skylander-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(220px, 1fr));
-      gap: 6px 20px;
-      max-width: 600px;
+    .skylander-columns {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
       margin: 0 auto;
+    }
+
+    .skylander-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 260px;
+    }
+
+    .skylander-list label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
     }
 
     .skylander-list label {
@@ -113,54 +126,52 @@
     <h2 style="text-align:center; font-size: 32px;">Spyro's Adventure</h2>
 
     <h3 style="text-align:center;">Skylanders</h3>
-    <div class="skylander-list">
-      <!-- Magic -->
-      <label style="color:#9b59b6;"><input type="checkbox" data-name="Spyro" /> Spyro</label>
-      <label style="color:#9b59b6;"><input type="checkbox" data-name="Double Trouble" /> Double Trouble</label>
-      <label style="color:#9b59b6;"><input type="checkbox" data-name="Voodood" /> Voodood</label>
-      <label style="color:#9b59b6;"><input type="checkbox" data-name="Wrecking Ball" /> Wrecking Ball</label>
+    <div class="skylander-columns">
+      <div class="skylander-list">
+        <!-- LEFT COLUMN: Magic, Water, Tech, Undead -->
+        <label style="color:#9b59b6;"><input type="checkbox" data-name="Spyro" /> Spyro</label>
+        <label style="color:#9b59b6;"><input type="checkbox" data-name="Double Trouble" /> Double Trouble</label>
+        <label style="color:#9b59b6;"><input type="checkbox" data-name="Voodood" /> Voodood</label>
+        <label style="color:#9b59b6;"><input type="checkbox" data-name="Wrecking Ball" /> Wrecking Ball</label>
 
-      <!-- Water -->
-      <label style="color:#4169e1;"><input type="checkbox" data-name="Gill Grunt" /> Gill Grunt</label>
-      <label style="color:#4169e1;"><input type="checkbox" data-name="Slam Bam" /> Slam Bam</label>
-      <label style="color:#4169e1;"><input type="checkbox" data-name="Wham Shell" /> Wham Shell</label>
-      <label style="color:#4169e1;"><input type="checkbox" data-name="Zap" /> Zap</label>
+        <label style="color:#4169e1;"><input type="checkbox" data-name="Gill Grunt" /> Gill Grunt</label>
+        <label style="color:#4169e1;"><input type="checkbox" data-name="Slam Bam" /> Slam Bam</label>
+        <label style="color:#4169e1;"><input type="checkbox" data-name="Wham Shell" /> Wham Shell</label>
+        <label style="color:#4169e1;"><input type="checkbox" data-name="Zap" /> Zap</label>
 
-      <!-- Tech -->
-      <label style="color:#e67e22;"><input type="checkbox" data-name="Trigger Happy" /> Trigger Happy</label>
-      <label style="color:#e67e22;"><input type="checkbox" data-name="Boomer" /> Boomer</label>
-      <label style="color:#e67e22;"><input type="checkbox" data-name="Drill Sergeant" /> Drill Sergeant</label>
-      <label style="color:#e67e22;"><input type="checkbox" data-name="Drobot" /> Drobot</label>
+        <label style="color:#e67e22;"><input type="checkbox" data-name="Trigger Happy" /> Trigger Happy</label>
+        <label style="color:#e67e22;"><input type="checkbox" data-name="Boomer" /> Boomer</label>
+        <label style="color:#e67e22;"><input type="checkbox" data-name="Drill Sergeant" /> Drill Sergeant</label>
+        <label style="color:#e67e22;"><input type="checkbox" data-name="Drobot" /> Drobot</label>
 
-      <!-- Undead -->
-      <label style="color:#aaaaaa;"><input type="checkbox" data-name="Cynder" /> Cynder</label>
-      <label style="color:#aaaaaa;"><input type="checkbox" data-name="Chop Chop" /> Chop Chop</label>
-      <label style="color:#aaaaaa;"><input type="checkbox" data-name="Ghost Roaster" /> Ghost Roaster</label>
-      <label style="color:#aaaaaa;"><input type="checkbox" data-name="Hex" /> Hex</label>
+        <label style="color:#aaaaaa;"><input type="checkbox" data-name="Cynder" /> Cynder</label>
+        <label style="color:#aaaaaa;"><input type="checkbox" data-name="Chop Chop" /> Chop Chop</label>
+        <label style="color:#aaaaaa;"><input type="checkbox" data-name="Ghost Roaster" /> Ghost Roaster</label>
+        <label style="color:#aaaaaa;"><input type="checkbox" data-name="Hex" /> Hex</label>
+      </div>
 
-      <!-- Earth -->
-      <label style="color:#8b5a2b;"><input type="checkbox" data-name="Bash" /> Bash</label>
-      <label style="color:#8b5a2b;"><input type="checkbox" data-name="Prism Break" /> Prism Break</label>
-      <label style="color:#8b5a2b;"><input type="checkbox" data-name="Dino Rang" /> Dino Rang</label>
-      <label style="color:#8b5a2b;"><input type="checkbox" data-name="Terrafin" /> Terrafin</label>
+      <div class="skylander-list">
+        <!-- RIGHT COLUMN: Earth, Fire, Life, Air -->
+        <label style="color:#8b5a2b;"><input type="checkbox" data-name="Bash" /> Bash</label>
+        <label style="color:#8b5a2b;"><input type="checkbox" data-name="Prism Break" /> Prism Break</label>
+        <label style="color:#8b5a2b;"><input type="checkbox" data-name="Dino Rang" /> Dino Rang</label>
+        <label style="color:#8b5a2b;"><input type="checkbox" data-name="Terrafin" /> Terrafin</label>
 
-      <!-- Fire -->
-      <label style="color:#e74c3c;"><input type="checkbox" data-name="Ignitor" /> Ignitor</label>
-      <label style="color:#e74c3c;"><input type="checkbox" data-name="Flameslinger" /> Flameslinger</label>
-      <label style="color:#e74c3c;"><input type="checkbox" data-name="Sunburn" /> Sunburn</label>
-      <label style="color:#e74c3c;"><input type="checkbox" data-name="Eruptor" /> Eruptor</label>
+        <label style="color:#e74c3c;"><input type="checkbox" data-name="Ignitor" /> Ignitor</label>
+        <label style="color:#e74c3c;"><input type="checkbox" data-name="Flameslinger" /> Flameslinger</label>
+        <label style="color:#e74c3c;"><input type="checkbox" data-name="Sunburn" /> Sunburn</label>
+        <label style="color:#e74c3c;"><input type="checkbox" data-name="Eruptor" /> Eruptor</label>
 
-      <!-- Life -->
-      <label style="color:#2ecc71;"><input type="checkbox" data-name="Stealth Elf" /> Stealth Elf</label>
-      <label style="color:#2ecc71;"><input type="checkbox" data-name="Stump Smash" /> Stump Smash</label>
-      <label style="color:#2ecc71;"><input type="checkbox" data-name="Camo" /> Camo</label>
-      <label style="color:#2ecc71;"><input type="checkbox" data-name="Zook" /> Zook</label>
+        <label style="color:#2ecc71;"><input type="checkbox" data-name="Stealth Elf" /> Stealth Elf</label>
+        <label style="color:#2ecc71;"><input type="checkbox" data-name="Stump Smash" /> Stump Smash</label>
+        <label style="color:#2ecc71;"><input type="checkbox" data-name="Camo" /> Camo</label>
+        <label style="color:#2ecc71;"><input type="checkbox" data-name="Zook" /> Zook</label>
 
-      <!-- Air -->
-      <label style="color:#7fd3ff;"><input type="checkbox" data-name="Sonic Boom" /> Sonic Boom</label>
-      <label style="color:#7fd3ff;"><input type="checkbox" data-name="Lightning Rod" /> Lightning Rod</label>
-      <label style="color:#7fd3ff;"><input type="checkbox" data-name="Whirlwind" /> Whirlwind</label>
-      <label style="color:#7fd3ff;"><input type="checkbox" data-name="Warnado" /> Warnado</label>
+        <label style="color:#7fd3ff;"><input type="checkbox" data-name="Sonic Boom" /> Sonic Boom</label>
+        <label style="color:#7fd3ff;"><input type="checkbox" data-name="Lightning Rod" /> Lightning Rod</label>
+        <label style="color:#7fd3ff;"><input type="checkbox" data-name="Whirlwind" /> Whirlwind</label>
+        <label style="color:#7fd3ff;"><input type="checkbox" data-name="Warnado" /> Warnado</label>
+      </div>
     </div>
 
     <h3 style="text-align:center;">Sets</h3>
@@ -212,17 +223,31 @@
     function showTab(id) {
       document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
       document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-
       document.getElementById(id).classList.add('active');
       event.target.classList.add('active');
     }
 
-    /* ===== Set Completion Logic ===== */
-    const checkboxes = document.querySelectorAll('input[type="checkbox"][data-name]');
+    /* ===== Save / Load Collection ===== */
+    const allCheckboxes = document.querySelectorAll('input[type="checkbox"][data-name]');
+
+    function saveProgress() {
+      const data = {};
+      allCheckboxes.forEach(cb => data[cb.dataset.name] = cb.checked);
+      localStorage.setItem('skylanders-progress', JSON.stringify(data));
+      updateSets();
+    }
+
+    function loadProgress() {
+      const saved = JSON.parse(localStorage.getItem('skylanders-progress') || '{}');
+      allCheckboxes.forEach(cb => cb.checked = !!saved[cb.dataset.name]);
+      updateSets();
+    }
+
+    /* ===== Set Completion ===== */
     const sets = document.querySelectorAll('.set');
 
     function updateSets() {
-      const collected = Array.from(checkboxes)
+      const collected = Array.from(allCheckboxes)
         .filter(cb => cb.checked)
         .map(cb => cb.dataset.name);
 
@@ -233,7 +258,8 @@
       });
     }
 
-    checkboxes.forEach(cb => cb.addEventListener('change', updateSets));
+    allCheckboxes.forEach(cb => cb.addEventListener('change', saveProgress));
+    loadProgress();
   </script>
 
 </body>
