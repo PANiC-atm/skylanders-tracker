@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Skylanders Collection Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f0f14;
+      color: #eee;
+      margin: 0;
+    }
+
+    /* ===== Tabs ===== */
+    .tabs {
+      display: flex;
+      background: #1b1b26;
+      border-bottom: 2px solid #2c2c3d;
+    }
+
+    .tab {
+      padding: 12px 18px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .tab.active {
+      background: #2c2c3d;
+      font-weight: bold;
+    }
+
+    /* ===== Content ===== */
+    .content {
+      display: none;
+      padding: 20px;
+    }
+
+    .content.active {
+      display: block;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    /* ===== Lists ===== */
+    .skylander-list label {
+      display: block;
+      margin: 4px 0;
+      cursor: pointer;
+    }
+
+    /* ===== Sets / Trophies ===== */
+    .set {
+      margin-top: 15px;
+      padding: 10px;
+      border: 1px solid #2c2c3d;
+      border-radius: 6px;
+    }
+
+    .set.complete {
+      border-color: #00ffaa;
+      background: rgba(0, 255, 170, 0.1);
+    }
+
+    .set-title {
+      font-weight: bold;
+    }
+
+    .trophy {
+      margin-left: 8px;
+      color: #00ffaa;
+      display: none;
+    }
+
+    .set.complete .trophy {
+      display: inline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Tabs ===== -->
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('ssa')">Spyro's Adventure</div>
+    <div class="tab" onclick="showTab('giants')">Giants</div>
+    <div class="tab" onclick="showTab('swap')">Swap Force</div>
+    <div class="tab" onclick="showTab('trap')">Trap Team</div>
+    <div class="tab" onclick="showTab('super')">Superchargers</div>
+    <div class="tab" onclick="showTab('imaginators')">Imaginators</div>
+  </div>
+
+  <!-- ===== Spyro's Adventure ===== -->
+  <div id="ssa" class="content active">
+    <h2>Spyro's Adventure</h2>
+
+    <h3>Skylanders</h3>
+    <div class="skylander-list">
+      <!-- Magic -->
+      <label><input type="checkbox" data-name="Spyro" /> Spyro</label>
+      <label><input type="checkbox" data-name="Double Trouble" /> Double Trouble</label>
+      <label><input type="checkbox" data-name="Voodood" /> Voodood</label>
+      <label><input type="checkbox" data-name="Wrecking Ball" /> Wrecking Ball</label>
+
+      <!-- Water -->
+      <label><input type="checkbox" data-name="Gill Grunt" /> Gill Grunt</label>
+      <label><input type="checkbox" data-name="Slam Bam" /> Slam Bam</label>
+      <label><input type="checkbox" data-name="Wham Shell" /> Wham Shell</label>
+      <label><input type="checkbox" data-name="Zap" /> Zap</label>
+
+      <!-- Tech -->
+      <label><input type="checkbox" data-name="Trigger Happy" /> Trigger Happy</label>
+      <label><input type="checkbox" data-name="Boomer" /> Boomer</label>
+      <label><input type="checkbox" data-name="Drill Sergeant" /> Drill Sergeant</label>
+      <label><input type="checkbox" data-name="Drobot" /> Drobot</label>
+
+      <!-- Undead -->
+      <label><input type="checkbox" data-name="Cynder" /> Cynder</label>
+      <label><input type="checkbox" data-name="Chop Chop" /> Chop Chop</label>
+      <label><input type="checkbox" data-name="Ghost Roaster" /> Ghost Roaster</label>
+      <label><input type="checkbox" data-name="Hex" /> Hex</label>
+
+      <!-- Earth -->
+      <label><input type="checkbox" data-name="Bash" /> Bash</label>
+      <label><input type="checkbox" data-name="Prism Break" /> Prism Break</label>
+      <label><input type="checkbox" data-name="Dino Rang" /> Dino Rang</label>
+      <label><input type="checkbox" data-name="Terrafin" /> Terrafin</label>
+
+      <!-- Fire -->
+      <label><input type="checkbox" data-name="Ignitor" /> Ignitor</label>
+      <label><input type="checkbox" data-name="Flameslinger" /> Flameslinger</label>
+      <label><input type="checkbox" data-name="Sunburn" /> Sunburn</label>
+      <label><input type="checkbox" data-name="Eruptor" /> Eruptor</label>
+
+      <!-- Life -->
+      <label><input type="checkbox" data-name="Stealth Elf" /> Stealth Elf</label>
+      <label><input type="checkbox" data-name="Stump Smash" /> Stump Smash</label>
+      <label><input type="checkbox" data-name="Camo" /> Camo</label>
+      <label><input type="checkbox" data-name="Zook" /> Zook</label>
+
+      <!-- Air -->
+      <label><input type="checkbox" data-name="Sonic Boom" /> Sonic Boom</label>
+      <label><input type="checkbox" data-name="Lightning Rod" /> Lightning Rod</label>
+      <label><input type="checkbox" data-name="Whirlwind" /> Whirlwind</label>
+      <label><input type="checkbox" data-name="Warnado" /> Warnado</label>
+    </div>
+
+    <h3>Sets</h3>
+
+    <div class="set" data-set="Spyro,Double Trouble,Voodood,Wrecking Ball">
+      <div class="set-title">SSA Magic <span class="trophy">🏆</span></div>
+      Spyro, Double Trouble, Voodood, Wrecking Ball
+    </div>
+
+    <div class="set" data-set="Gill Grunt,Slam Bam,Wham Shell,Zap">
+      <div class="set-title">SSA Water <span class="trophy">🏆</span></div>
+      Gill Grunt, Slam Bam, Wham Shell, Zap
+    </div>
+
+    <div class="set" data-set="Trigger Happy,Drill Sergeant,Drobot,Boomer">
+      <div class="set-title">SSA Tech <span class="trophy">🏆</span></div>
+      Trigger Happy, Drill Sergeant, Drobot, Boomer
+    </div>
+  </div>
+
+  <!-- ===== Other Games (Placeholders) ===== -->
+  <div id="giants" class="content">
+    <h2>Giants</h2>
+    <label><input type="checkbox" /> Placeholder</label>
+  </div>
+
+  <div id="swap" class="content">
+    <h2>Swap Force</h2>
+    <label><input type="checkbox" /> Placeholder</label>
+  </div>
+
+  <div id="trap" class="content">
+    <h2>Trap Team</h2>
+    <label><input type="checkbox" /> Placeholder</label>
+  </div>
+
+  <div id="super" class="content">
+    <h2>Superchargers</h2>
+    <label><input type="checkbox" /> Placeholder</label>
+  </div>
+
+  <div id="imaginators" class="content">
+    <h2>Imaginators</h2>
+    <label><input type="checkbox" /> Placeholder</label>
+  </div>
+
+  <script>
+    /* ===== Tab Switching ===== */
+    function showTab(id) {
+      document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+
+      document.getElementById(id).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    /* ===== Set Completion Logic ===== */
+    const checkboxes = document.querySelectorAll('input[type="checkbox"][data-name]');
+    const sets = document.querySelectorAll('.set');
+
+    function updateSets() {
+      const collected = Array.from(checkboxes)
+        .filter(cb => cb.checked)
+        .map(cb => cb.dataset.name);
+
+      sets.forEach(set => {
+        const required = set.dataset.set.split(',');
+        const complete = required.every(name => collected.includes(name));
+        set.classList.toggle('complete', complete);
+      });
+    }
+
+    checkboxes.forEach(cb => cb.addEventListener('change', updateSets));
+  </script>
+
+</body>
+</html>
