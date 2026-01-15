@@ -1,66 +1,62 @@
-// ===== Skylanders Collection Script =====
+<script>
+  /* ===== Tab Switching ===== */
+  function showTab(id) {
+    document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
 
-// ---------- Storage ----------
-function saveProgress() {
-  const data = {};
-  document
-    .querySelectorAll('input[type="checkbox"][data-name]')
-    .forEach(cb => data[cb.dataset.name] = cb.checked);
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
 
-  localStorage.setItem('skylanders-progress', JSON.stringify(data));
-  updateSets();
-  updateCounter();
-}
+    updateCounter();
+  }
 
-function loadProgress() {
-  const saved = JSON.parse(localStorage.getItem('skylanders-progress') || '{}');
+  /* ===== Checkboxes ===== */
+  const allCheckboxes = document.querySelectorAll('input[type="checkbox"][data-name]');
 
-  document
-    .querySelectorAll('input[type="checkbox"][data-name]')
-    .forEach(cb => cb.checked = !!saved[cb.dataset.name]);
+  function saveProgress() {
+    const data = {};
+    allCheckboxes.forEach(cb => data[cb.dataset.name] = cb.checked);
+    localStorage.setItem('skylanders-progress', JSON.stringify(data));
+    updateSets();
+    updateCounter();
+  }
 
-  updateSets();
-  updateCounter();
-}
+  function loadProgress() {
+    const saved = JSON.parse(localStorage.getItem('skylanders-progress') || '{}');
+    allCheckboxes.forEach(cb => cb.checked = !!saved[cb.dataset.name]);
+    updateSets();
+    updateCounter();
+  }
 
-// ---------- Sets ----------
-function updateSets() {
-  document.querySelectorAll('.set').forEach(set => {
-    const names = set.dataset.set.split(',');
-    const complete = names.every(name => {
-      const cb = document.querySelector(`input[data-name="${name}"]`);
-      return cb && cb.checked;
+  /* ===== Sets ===== */
+  const sets = document.querySelectorAll('.set');
+
+  function updateSets() {
+    const collected = Array.from(allCheckboxes)
+      .filter(cb => cb.checked)
+      .map(cb => cb.dataset.name);
+
+    sets.forEach(set => {
+      const required = set.dataset.set.split(',');
+      const complete = required.every(name => collected.includes(name));
+      set.classList.toggle('complete', complete);
     });
-    set.classList.toggle('complete', complete);
-  });
-}
+  }
 
-// ---------- Counter (PER GAME) ----------
-function updateCounter() {
-  const counter = document.getElementById('collection-counter');
-  const activeTab = document.querySelector('.tab-content.active');
-  if (!counter || !activeTab) return;
+  /* ===== COUNTER (THIS WAS MISSING) ===== */
+  function updateCounter() {
+    const counter = document.getElementById('collection-counter');
+    const activeContent = document.querySelector('.content.active');
+    if (!counter || !activeContent) return;
 
-  const checkboxes = activeTab.querySelectorAll('input[type="checkbox"][data-name]');
-  const total = checkboxes.length;
-  const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
+    const boxes = activeContent.querySelectorAll('input[type="checkbox"][data-name]');
+    const total = boxes.length;
+    const checked = Array.from(boxes).filter(b => b.checked).length;
 
-  counter.textContent = `${checked} / ${total}`;
-}
+    counter.textContent = `${checked} / ${total}`;
+  }
 
-// ---------- Events ----------
-document
-  .querySelectorAll('input[type="checkbox"][data-name]')
-  .forEach(cb => cb.addEventListener('change', saveProgress));
-
-// ---------- Tabs ----------
-function showTab(id) {
-  document.querySelectorAll('.tab-content')
-    .forEach(tab => tab.classList.remove('active'));
-
-  document.getElementById(id).classList.add('active');
-  updateCounter();
-}
-
-// ---------- Init ----------
-loadProgress();
+  /* ===== Init ===== */
+  allCheckboxes.forEach(cb => cb.addEventListener('change', saveProgress));
+  loadProgress();
+</script>
